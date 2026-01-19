@@ -3,10 +3,9 @@ clear; clc; close all;
 
 dataDir = fileparts(mfilename('fullpath'));
 
-allFiles = dir(fullfile(dataDir,'..', '..', 'PR_CW_Dataset_2026','PR_CW_mat', '*_papillarray_single.mat'));
-isPLA = arrayfun(@(f) ~contains(f.name,'_TPU_') && ~contains(f.name,'_rubber_'), allFiles);
-files = allFiles(isPLA);
-assert(~isempty(files), 'No PLA *_papillarray_single.mat found in: %s', dataDir);
+allFiles = dir(fullfile(dataDir, '*_papillarray_single.mat'));
+files = allFiles; 
+assert(~isempty(files), 'No *_papillarray_single.mat found in: %s', dataDir);
 
 smoothWinFrac = 0.003;
 minDistFrac   = 0.02;
@@ -73,8 +72,9 @@ for k = 1:numel(files)
     save(fullfile(dataDir, ['A2_extracted_' base '.mat']), '-struct', 'result');
 end
 
-save(fullfile(dataDir, 'A2_all_PLA_peaks_and_extracted.mat'), 'allResults');
-disp('A2 done. Saved A2_peaks_*.png/.fig and A2_extracted_*.mat + A2_all_PLA_peaks_and_extracted.mat');
+save(fullfile(dataDir, 'A2_all_objects_peaks_and_extracted.mat'), 'allResults');
+disp('A2 done. Saved ... + A2_all_objects_peaks_and_extracted.mat');
+
 
 %% ===== helpers =====
 function normal = autoPositiveNormal(Fz)
@@ -111,3 +111,4 @@ function [locs, pks] = simplePeaks(x, minDist, minHeight)
     locs = sort(keep);
     pks  = x(locs);
 end
+
