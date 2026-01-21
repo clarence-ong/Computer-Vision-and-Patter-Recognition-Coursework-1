@@ -3,8 +3,8 @@ clear; clc; close all;
 
 dataDir = fileparts(mfilename('fullpath'));
 
-allFiles = dir(fullfile(dataDir, '*_papillarray_single.mat'));
-files = allFiles; 
+allFiles = dir(fullfile(dataDir,'..', '..', 'PR_CW_Dataset_2026','PR_CW_mat', '*_papillarray_single.mat'));
+files = allFiles;
 assert(~isempty(files), 'No *_papillarray_single.mat found in: %s', dataDir);
 
 smoothWinFrac = 0.003;
@@ -51,8 +51,8 @@ for k = 1:numel(files)
         end
     end
 
-    savefig(fig, fullfile(dataDir, ['A2_peaks_' base '.fig']));
-    exportgraphics(fig, fullfile(dataDir, ['A2_peaks_' base '.png']), 'Resolution', 300);
+    savefig(fig, fullfile(dataDir, "..", "assets", ['A2_peaks_' base '.fig']));
+    exportgraphics(fig, fullfile(dataDir,"..", "assets", ['A2_peaks_' base '.png']), 'Resolution', 300);
 
     % ---- save peaks & indices (A.2b) ----
     result = struct();
@@ -69,10 +69,10 @@ for k = 1:numel(files)
     safeField = matlab.lang.makeValidName(base);
     allResults.(safeField) = result;
 
-    save(fullfile(dataDir, ['A2_extracted_' base '.mat']), '-struct', 'result');
+    save(fullfile(dataDir, "..", "extracted_tactile_sensor_data", ['A2_extracted_' base '.mat']), '-struct', 'result');
 end
 
-save(fullfile(dataDir, 'A2_all_objects_peaks_and_extracted.mat'), 'allResults');
+save(fullfile(dataDir, "..", "extracted_tactile_sensor_data", 'A2_all_objects_peaks_and_extracted.mat'), 'allResults');
 disp('A2 done. Saved ... + A2_all_objects_peaks_and_extracted.mat');
 
 
