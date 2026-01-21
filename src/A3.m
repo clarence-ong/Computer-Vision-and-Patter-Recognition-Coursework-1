@@ -87,8 +87,8 @@ for s = 1:numel(shapes)
     view(3);
 
     % Save for report
-    savefig(gcf, fullfile(dataDir,'..', '..', 'PR_CW_Dataset_2026','PR_CW_mat', ['A3_P4_scatter_' shape '.fig']));
-    exportgraphics(gcf, fullfile(dataDir,'..', '..', 'PR_CW_Dataset_2026','PR_CW_mat', ['A3_P4_scatter_' shape '.png']), 'Resolution', 300);
+    savefig(gcf, fullfile(dataDir,'..', 'assets', ['A3_P4_scatter_' shape '.fig']));
+    exportgraphics(gcf, fullfile(dataDir,'..', 'assets', ['A3_P4_scatter_' shape '.png']), 'Resolution', 300);
 end
 
 disp('A.3 done. Saved A3_P4_scatter_{cylinder|oblong|hexagon}.png/.fig');
