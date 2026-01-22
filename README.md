@@ -8,3 +8,16 @@ This repository contains the code, report, and supporting materials for **Course
 2. Place the unzipped dataset folder PR_CW_Dataset_2026 inside it
 3. Git clone this repository into the Coursework folder
 
+
+## Folder Structure
+Coursework/
+├── PR_CW_Dataset_2026/        # Unzipped dataset folder
+│   ├── PR_CW_mat              # Dataset files and subfolders
+│       └── ...
+│
+├── <this-repository>/         # Cloned Git repository
+│   ├── README.md
+│   ├── src/
+
+
+
