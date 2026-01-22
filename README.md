@@ -20,7 +20,7 @@ Coursework/
 ├── <this-repository>/         # Cloned Git repository
 │   ├── README.md
 │   ├── src/
-│   └── ...
+│   └── assets/
 ```
 
 
