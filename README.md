@@ -10,14 +10,18 @@ This repository contains the code, report, and supporting materials for **Course
 
 
 ## Folder Structure
+
+```text
 Coursework/
 ├── PR_CW_Dataset_2026/        # Unzipped dataset folder
-│   ├── PR_CW_mat              # Dataset files and subfolders
+│   └── PR_CW_mat/             # Dataset files and subfolders
 │       └── ...
 │
 ├── <this-repository>/         # Cloned Git repository
 │   ├── README.md
 │   ├── src/
+│   └── ...
+
 
 
 
