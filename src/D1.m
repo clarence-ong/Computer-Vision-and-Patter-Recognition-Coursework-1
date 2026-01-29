@@ -150,8 +150,8 @@ function pathOut = findMatFile(fname)
 candidates = {
     fullfile(pwd, fname)
     fullfile(fileparts(pwd), fname)
-    fullfile(pwd, 'PR_CW_Dataset_2026', 'PR_CW_mat', fname)
-    fullfile(pwd, 'PR_CW_Dataset_2026', 'PR_CW_mat_files', fname)
+    fullfile(pwd,'..','..', 'PR_CW_Dataset_2026', 'PR_CW_mat', fname)
+    fullfile(pwd,'..','..', 'PR_CW_Dataset_2026', 'PR_CW_mat_files', fname)
     };
 
 for i = 1:numel(candidates)
